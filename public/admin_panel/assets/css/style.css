@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", Helvetica, sans-serif;
+    background: #343c41;
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+.adminPanel {
+    background-color: #32cd32;
+    display: inline-block;
+    padding: 1rem;
+}
+/* Create New Button */
+/* Nav Links */
+
+.penetesterSPace {
+    background-color: rgba(36, 45, 53, 0.5);
+    text-align: center;
+    padding: 0.5rem;
+    width: 20rem;
+    margin: 20px 0;
+}
+
+.navbar-dark .navbar-nav .logoutBtn .nav-link {
+    color: rgba(245, 145, 145, 0.5);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.navLinks {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    letter-spacing: normal;
+    background-color: #292e32;
+}
+/* Nav Hover */
+
+.navLinks li a:hover:not(.active) {
+    color: white;
+}
+
+.navLinks li {
+    list-style: none;
+}
+/* Nav List */
+
+.navLinks li a {
+    color: #949ba2!important;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin: 1rem;
+}
+
+.btnType {
+    background-color: #32cd32;
+    display: inline-block;
+    padding: 0.5rem;
+    width: 13rem;
+    margin-left: 60rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.ctm-padding {
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+.ctm-margin {
+    margin: 0 2rem 0 2rem;
+}
+/* Company Report Start */
+
+.table {
+    background-color: #242d35;
+    color: white;
+}
+
+.circleGreen,
+.circleRed {
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: 40px;
+}
+
+.circleGreen {
+    background: green;
+}
+
+.circleRed {
+    background: red;
+}
+
+.circleYellow {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    background: yellow;
+}
+
+.editBtn i:nth-child(1) {
+    color: rgb(48 222 101 / 71%);
+    font-size: 1.8rem;
+}
+
+.titleSection {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+}
+/* Company Report End */
+/* New Asset Creation Section Start */
+
+.companyReport .tagify__input:empty::before {
+    color: #e9ecef;
+}
+
+.asset-margin {
+    margin-left: 30px!important;
+    margin-right: 30px!important;
+}
+
+.descriptionSection {
+    margin-left: 21rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
+
+#companyName {
+    width: 30rem;
+    margin-left: 1rem;
+    padding: .3rem;
+}
+
+#companyLogo {
+    margin-left: 1rem;
+    padding: .3rem;
+}
+
+#companyUrl {
+    width: 30rem;
+    margin-left: 8rem;
+    padding: .3rem;
+}
+
+#startDate {
+    width: 30rem;
+    margin-left: 4rem;
+    padding: .3rem;
+}
+
+#endDate {
+    width: 30rem;
+    margin-left: 4.5rem;
+    padding: .3rem;
+}
+
+#inScopeUrl {
+    width: 30rem;
+    margin-left: 1.5rem;
+    padding: .3rem;
+}
+
+#outScopeUrl {
+    width: 30rem;
+    margin-left: 2.4rem;
+    padding: .3rem;
+}
+
+.newAssetCreate {
+    background-color: #32cd32;
+    text-align: center;
+    padding: 0.7rem;
+    width: 17rem;
+    margin-left: 35rem;
+}
+
+.descriptionSection h4 {
+    margin-bottom: 1rem;
+}
+
+.reportTable .eyeBtn button,
+.reportTable .editBtn button {
+    font-size: 1.8rem;
+    border: 0;
+    background: transparent;
+}
+
+.submitButton {
+    height: 3.5rem;
+    margin-left: 48rem;
+    font-size: 1.5rem;
+    margin-bottom: 6rem;
+}
+/* New Asset Creation Section End */
+/* Company Report Section Start */
+
+.companyReportSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.companyNo a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+/* Company Report Section End */
+
+.individuallyCompanyReport {
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-around;
+}
+
+.downloadButton {
+    height: 3.5rem;
+    margin-left: 25rem;
+    font-size: 1.5rem;
+}
+
+.reportDescription {
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+#weakness {
+    width: 30rem;
+    margin-left: 8rem;
+    padding: .3rem;
+}
+
+#CVS {
+    width: 30rem;
+    margin-left: 4rem;
+    padding: .3rem;
+}
+
+#title {
+    width: 30rem;
+    margin-left: 4.5rem;
+    padding: .3rem;
+}
+
+#description {
+    width: 30rem;
+    margin-left: 1.5rem;
+    padding: .3rem;
+}
+
+#impact {
+    width: 30rem;
+    margin-left: 2.4rem;
+    padding: .3rem;
+}
+
+#searchOption {
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+.report {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.report p {
+    margin-left: 2rem;
+    margin-right: 5rem;
+}
+/* from customStyle.css */
+
+.btn-ctm {
+    background-color: rgba(19, 103, 193, 0.7);
+    border: rgba(48, 138, 234, 0.8);
+    color: #ffffffe8;
+    font-size: 20px;
+    padding: 5px 7px;
+    /* margin-bottom: 10px; */
+    margin-left: 5px;
+}
+
+.btn-ctm:hover {
+    background-color: #0056b3;
+    border: #0056b3;
+    color: #ffffff;
+}
+
+.ctm-nav {
+    background-color: #242d35!important;
+    font-size: 20px;
+}
+
+main.main-cont {
+    padding: 1.4rem;
+}
+
+.img-ctm {
+    max-width: 70%;
+}
+
+.title-bg {
+    background: #242d35;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #343c41;
+    position: relative;
+    text-align: center;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #343c41;
+}
+
+.form-section {
+    background-color: rgba(36, 45, 53, 0.5);
+    padding: 45px;
+}
+
+.m-ctm {
+    margin-top: 32px;
+}
+
+.ctm-btn-grp {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.programStatus {
+    background-color: rgba(36, 45, 53, 0.5);
+    color: #fff;
+    text-align: center;
+    border: 0.1px solid rgb(53 179 162 / 87%);
+    margin-left: 5px;
+}
+
+.programStatus h5 {
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.close-btn-ctm {
+    text-decoration: none;
+    color: rgba(255, 79, 79, 0.7);
+}
+
+.close-btn-ctm:hover {
+    text-decoration: none;
+    color: rgba(255, 79, 79, 0.9);
+}
+
+.ctm-btn-delete {
+    background-color: rgba(255, 79, 79, 0.7);
+    border: rgba(255, 79, 79, 0.7);
+    color: #ffffff;
+    padding: 12px 20px;
+    margin-right: 2px;
+}
+
+.ctm-btn-delete:hover {
+    background-color: rgba(255, 79, 79, 0.9);
+    border: rgba(255, 79, 79, 0.9);
+    color: #ffffff;
+}
+
+.company-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reportTable .editBtn i {
+    font-size: 1.5rem;
+}
+
+.reportTable .editBtn i:nth-child(1) {
+    color: rgb(48 222 101 / 71%);
+    font-size: 1.8rem;
+}
+
+.reportTable .editBtn i:nth-child(2) {
+    color: rgb(220 53 69);
+}
+
+table.dataTable td {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    word-break: break-word;
+    max-width: 200px;
+    width: 200px;
+}
+/* custom dataTables CSS */
+
+select.custom-select.form-control,
+input.form-control,
+.form-control:focus,
+label.custom-file-label,
+tags.tagify.form-control {
+    color: #fff;
+    background: #242d35;
+    border: 1px solid #4e5050;
+}
+
+.page-item.disabled .page-link {
+    color: #fff;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #242d35;
+    border-color: #4e5050;
+}
+
+.page-link {
+    color: #fff;
+    background-color: #343c41;
+    border: 1px solid #4e5050;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #242d35;
+    border-color: #4e5050;
+}
+/* custom dataTables CSS End */
+
+.tagify__tag--editable>div {
+    color: #000;
+}
+
+.tagify__input:empty::before {
+    color: #e9ecef;
+}
+
+tags.tagify.form-control {
+    height: auto;
+}
+
+.tagify__input {
+    padding: .3em .5em !important;
+}
+
+.tagify__tag>div {
+    padding: .3em .5em!important;
+}
+
+.optional {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 5px;
+    position: absolute;
+}
+/**********Responsive**************/
+
+@media (max-width: 575px) {
+    .ctm-padding {
+        padding: 0;
+    }
+    .assetBtn {
+        text-align: center !important;
+        margin-left: 0px;
+    }
+    .ctm-margin {
+        margin: 0px;
+    }
+    .asset-margin {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+    .navbar-brand.sm-Device {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block !important;
+    }
+    .navbar-brand.sm-Device img {
+        max-width: 70%;
+    }
+    .companyReport {
+        overflow-x: scroll;
+    }
+    .navbar-brand.md-Device {
+        display: none;
+    }
+    .companyTitle {
+        padding: 0!important;
+    }
+    .penetesterSPace {
+        margin-left: 0px !important;
+        text-align: center;
+    }
+    .penetesterSPace h2 {
+        font-size: 25px;
+    }
+    .company-section {
+        display: inline-block;
+        justify-content: center!important;
+        margin-right: 0px;
+        text-align: center;
+        width: 100%;
+    }
+    .company-section button {
+        font-size: 15px;
+    }
+    .programStatus {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .reportTable {
+        overflow-x: scroll;
+    }
+    .dataTables_wrapper .dataTables_paginate ul.pagination {
+        margin: 2px 0;
+        white-space: nowrap;
+        justify-content: flex-start;
+    }
+    .searchBar .input-group {
+        margin-bottom: 10px!important;
+    }
+    .title-font h2 {
+        font-size: 22px;
+    }
+    .title-font h3 {
+        font-size: 22px;
+    }
+    .title-bg {
+        background: #242d35;
+        padding: 5px;
+        border-radius: 3px;
+        text-align: center!important;
+    }
+    .prev-content {
+        overflow-wrap: break-word;
+    }
+    .prev-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .reportTable {
+        overflow-x: scroll;
+    }
+    .asset-margin {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+    .navbar-brand.sm-Device {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block !important;
+    }
+    .navbar-brand.sm-Device img {
+        max-width: 70%;
+    }
+    .companyReport {
+        overflow-x: scroll;
+    }
+    .navbar-brand.md-Device {
+        display: none;
+    }
+    .penetesterSPace {
+        margin-left: 0px !important;
+        text-align: center;
+        width: 100%;
+    }
+    .penetesterSPace h2 {
+        font-size: 25px;
+    }
+    .company-section {
+        display: inline-block;
+        justify-content: center!important;
+        margin-right: 0px;
+        text-align: center;
+        width: 100%;
+    }
+    .programStatus {
+        text-align: center;
+        width: 70%;
+        margin: auto;
+    }
+    .circleRed,
+    .circleGreen {
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        top: 18px;
+    }
+    #assets_data_wrapper .row,
+    #show_assets_data_wrapper .row {
+        display: block;
+    }
+    .dataTables_wrapper .dataTables_paginate .pagination {
+        justify-content: flex-start!important;
+    }
+    .form-section {
+        padding: 15px;
+    }
+    .assetBtn {
+        text-align: left;
+        margin-left: -4px;
+    }
+    .btn-ctm {
+        margin-bottom: 10px;
+    }
+    .searchBar .input-group {
+        margin-bottom: 10px!important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .reportTable {
+        overflow-x: scroll;
+    }
+    #assets_data_wrapper .row,
+    #show_assets_data_wrapper .row {
+        display: block;
+    }
+    .dataTables_wrapper .dataTables_paginate .pagination {
+        justify-content: flex-start!important;
+    }
+    .btn-ctm {
+        font-size: 16px;
+        padding: 5px 10px;
+        margin-bottom: 0;
+        margin-left: 5px;
+    }
+    .company-section button {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 992px) {
+    .company-section button {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .company-section button {
+        font-size: 20px;
+    }
+}
+
+/**
+    Markdown CSS
+ */
+pre {
+    display: block;
+    font-size: 87.5%;
+    color: #ffffff;
+}
+
+.welcome-user{
+    margin-top: 9px;
+}

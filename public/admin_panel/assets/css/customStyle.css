@@ -1,0 +1,154 @@
+.assetBtn{
+    margin-top: 25px;
+    margin-right: 3.1rem;
+    float: right;
+}
+
+.btn-ctm{
+    background-color: rgba(0, 123, 255, 0.8);
+    border: rgba(0, 123, 255, 0.8);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 25px;
+}
+
+.btn-ctm:hover{
+    background-color: #0056b3;
+    border: #0056b3;
+    color: #ffffff;
+}
+
+.ctm-nav{
+    background-color: #242d35!important;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.ctm-nav ul{
+    margin: 0 45px;
+}
+
+.img-ctm{
+    max-width: 70%;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #343c41;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #343c41;
+}
+
+.form-section{
+    background-color: rgba(36, 45, 53, 0.5);
+    padding: 45px;
+    margin-top: 20px;
+}
+
+.m-ctm{
+    margin-top: 32px;
+}
+
+.ctm-btn-grp{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.programStatus{
+    background-color: rgba(36, 45, 53, 0.5);
+    text-align: center;
+    padding: 5px;
+    width: 22rem;
+    border: 0.1px solid rgb(69, 201, 37);
+}
+
+.programStatus h5{
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.close-btn-ctm{
+    text-decoration: none;
+    color: rgba(255, 79, 79, 0.7);
+}
+
+.close-btn-ctm:hover{
+    text-decoration: none;
+    color: rgba(255, 79, 79, 0.9);
+}
+
+.ctm-btn-delete{
+    background-color: rgba(255, 79, 79, 0.7);
+    border: rgba(255, 79, 79, 0.7);
+    color: #ffffff;
+    padding: 12px 20px;
+    margin-right: 2px;
+}
+
+.ctm-btn-delete:hover{
+    background-color: rgba(255, 79, 79, 0.9);
+    border: rgba(255, 79, 79, 0.9);
+    color: #ffffff;
+}
+
+.company-section{
+    display: flex;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.tagify {
+    border-radius: .25rem;
+    background-color: #ffffff;
+    color: black;
+    --tags-border-color: #DDD;
+    --tags-hover-border-color: #CCC;
+    --tags-focus-border-color: #3595f6;
+    --tag-bg: #343c41;
+    --tag-hover: rgba(36, 45, 53, 0.8);
+    --tag-text-color: #ffffff;
+    --tag-text-color--edit: #ffffff;
+    --tag-pad: 0.5em 0.7em;
+    --tag-inset-shadow-size: 1.1em;
+    --tag-invalid-color: darkred;
+    --tag-invalid-bg: darkred;
+    --tag-remove-bg: rgba(36, 45, 53, 0.8);
+    --tag-remove-btn-bg: none;
+    --tag-remove-btn-bg--hover: #c77777;
+    --tag--min-width: 1ch;
+    --tag--max-width: auto;
+    --tag-hide-transition: .3s;
+    --placeholder-color: black;
+    --loader-size: .8em;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border: 1px solid var(--tags-border-color);
+    padding: 0;
+    line-height: 1.1;
+    cursor: text;
+    outline: 0;
+    position: relative;
+    transition: .1s;
+}
+
+.tagify__tag--editable>div {
+    color: #000;
+    /* color: var(--tag-text-color--edit); */
+}
+
+.optional{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 5px;
+    position: absolute;
+}

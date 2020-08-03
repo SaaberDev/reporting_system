@@ -1,0 +1,1079 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #292E32;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+body {
+    font-family: "Titillium Web", Helvetica, sans-serif;
+    color: #000;
+    line-height: 1.5;
+    background: #343C41;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/*  Custom Scroll-Bar for Body
+*********************************/
+
+.main-scrollbar {
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    max-height: 150px;
+}
+
+.main-scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #292E32;
+}
+
+.main-scrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.main-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+
+/*  Custom Scroll-Bar for Body -> End
+****************************************/
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Index Page Design Part Start :::::::::::::::::::::::::::::
+*********************************************************************************/
+
+.main-nav {
+    background: #292e32;
+}
+
+.main-nav .navbar-brand {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.main-nav .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.main-nav .navbar-nav .nav-link:hover {
+    color: rgb(52, 168, 83) !important;
+    transition: 0.5s ease-in-out;
+}
+
+#index-page .main-heading h1 {
+    color: #37dae2cf;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#index-page .table-title,
+#index-page .table-single-row {
+    background: #292E32;
+    padding: 10px;
+    margin: 10px 0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#index-page .table-single-row {
+    cursor: pointer;
+}
+
+#index-page .table-single-row:hover {
+    background-color: rgba(0, 25, 45, 0.6) !important;
+    transition: 0.5s ease-in-out !important;
+}
+
+#index-page .table-title h3 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff;
+}
+
+#index-page .brand-logo {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 5px solid #343c41;
+    margin-left: 50px;
+}
+
+#index-page .brand-logo img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+#index-page .brand-logo img:hover {
+    transform: rotate(360deg);
+    transition: 2s ease;
+}
+
+#index-page .brand-name a,
+#index-page .working-date p {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    margin: 0;
+}
+
+#index-page .brand-name a:hover {
+    /*color: #1EBE73 !important;*/
+    transition: 0.3s;
+}
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Index Page Design Part End :::::::::::::::::::::::::::::::
+*********************************************************************************/
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Asset Page Design Part Start :::::::::::::::::::::::::::::::
+*********************************************************************************/
+
+#asset-page .mid-cont .sngl-col {
+    padding: 15px 0;
+    align-items: baseline;
+}
+
+#asset-page .mid-cont .sngl-col h5 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+#asset-page .mid-cont .sngl-col p {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    width: 100%;
+    word-break: break-word;
+}
+
+#asset-page .mid-cont .sngl-col .dwn-ref a {
+    color: #43c3d8;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#asset-page .mid-cont .sngl-col .dwn-ref a:hover {
+    color: #58d9ef;
+}
+
+#asset-page .mid-cont .sngl-col .dwn-ref a svg {
+    margin-left: 5px;
+}
+
+#asset-page .scope-cont h2 {
+    font-size: 22px;
+}
+
+#asset-page .scope-cont p {
+    font-size: 15px;
+}
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Asset Page Design Part End :::::::::::::::::::::::::::::::
+*********************************************************************************/
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Form Submit Page Design Part Start :::::::::::::::::::::::
+*********************************************************************************/
+
+.custom-bg {
+    background-color: #292E32;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.brand-part,
+.asset-part,
+.weakness-part,
+.score-part,
+.submit-part {
+    border-radius: 5px;
+}
+
+.brand-part .brand-logo .logo-shape {
+    border: 5px solid #323A3F;
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    background: #323A3F;
+}
+
+.brand-part .brand-logo .logo-shape img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.brand-part .brand-content {}
+
+.brand-part .brand-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.brand-part .brand-content a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    font-style: italic;
+}
+
+.brand-part .brand-content a:hover {
+    color: #34B9D2;
+    transition: 0.3s ease;
+}
+
+
+/*brand-part end*/
+
+
+/*::::::::::::::::::::::*/
+
+
+/*asset-part start*/
+
+.asset-part .heading h2,
+.weakness-part .heading h2,
+.score-part .heading h2 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.asset-part .asset-content p,
+.weakness-part .asset-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 0;
+    text-align: justify;
+}
+
+.asset-part .asset-content input,
+.weakness-part .asset-content input {
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: #292e32;
+    border: 3px solid rgb(55, 62, 68);
+    color: rgb(146, 146, 146);
+    font-size: 16px;
+}
+
+.weakness-part .others input {
+    border-radius: 0!important;
+}
+
+
+/* List Select Item Start */
+
+.inner-box .list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 10px;
+    border-radius: .25rem;
+    /*min-width: 761px;*/
+}
+
+.inner-box .list-group-item {
+    user-select: none;
+    background-color: rgb(55, 62, 68);
+}
+
+.inner-box .list-group input[type="radio"] {
+    display: none;
+}
+
+.inner-box .list-group input[type="radio"]+.list-group-item {
+    cursor: pointer;
+    padding-left: 50px;
+}
+
+.inner-box .list-group input[type="radio"]+.list-group-item:before {
+    content: "\2713";
+    color: transparent;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 34%;
+}
+
+.inner-box .list-group input[type="radio"]:checked+.list-group-item {
+    /*background-color: #0275D8;*/
+    background-color: rgb(42, 63, 80);
+    color: #FFF;
+    padding-left: 50px;
+}
+
+.inner-box .list-group input[type="radio"]:checked+.list-group-item:before {
+    color: inherit;
+    position: absolute;
+    left: 20px;
+    top: 34%;
+}
+
+.choiceLabel {
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 139, 139, 0.5);
+    padding-left: 50px;
+    margin-top: 10px;
+}
+
+.choiceLabel label {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.deselect {
+    color: rgb(234, 115, 30);
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.deselect:hover{
+    color: #ff0000;
+    transition: 0.3s;
+    text-decoration: line-through;
+}
+
+.strick-line {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.strick-line:before, .strick-line:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: #fff;
+}
+
+.strick-line:before {
+    left: -2.5px;
+}
+.strick-line:after {
+    right: 2.5px;
+    background: #fff;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.strick-line:hover:before {
+    background: #fff;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.strick-line:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+}
+
+
+/* List Select Item End */
+
+
+/* For inside body */
+
+.scrollbar {
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    max-height: 150px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #292e32;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #292e32;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+
+/* Scrollbar Style End */
+
+
+/*score-part start*/
+
+.orBorder:before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 50%;
+    background: #53575b;
+    left: 15%;
+    z-index: 0;
+}
+
+.orBorder:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 50%;
+    background: #53575b;
+    right: 0;
+    z-index: 0;
+}
+
+.orBorder {
+    text-align: center;
+    background: #292e32;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orBorder span {
+    padding: 10px 20px;
+    position: relative;
+}
+
+#orDiv:before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 50%;
+    background: #53575b;
+    left: 10%;
+    z-index: 0;
+}
+
+#orDiv:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 50%;
+    background: #53575b;
+    right: 25%;
+    z-index: 0;
+}
+
+#orDiv {
+    text-align: center;
+    background: #292e32;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#orDiv span {
+    padding: 10px 20px;
+    background: #292e32;
+    z-index: 1;
+    position: relative;
+}
+
+#orDiv span#toggleCvss {
+    cursor: pointer;
+    background: #343c41;
+    border-radius: 3px;
+}
+
+.score-part .inner-box .attact-opt h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #05bcc1;
+    padding: 5px 0;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.score-part .inner-box .attact-opt h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #05bcc1;
+    padding: 5px 0;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.score-part .inner-box .btn-outline-primary,
+.score-part .inner-box .attact-opt .btn-outline-primary {
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #48d8dc;
+}
+
+.btn-outline-primary:hover {
+    color: #000 !important;
+    background-color: #48d8dc !important;
+    border-color: #48d8dc !important;
+}
+
+.score-part .btn-outline-primary:not(:disabled):not(.disabled).active,
+.score-part .btn-outline-primary:not(:disabled):not(.disabled):active,
+.score-part .show>.btn-outline-primary.dropdown-toggle {
+    color: #292e32;
+    background-color: #48d8dc;
+    border-color: #48d8dc;
+}
+
+
+/*score-part end*/
+
+
+/*:::::::::::::::::::*/
+
+
+/*submit-part start*/
+
+.submit-part .inner-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.submit-part .inner-box h5 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.submit-part .inner-box h4 span {
+    color: red;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.submit-part .inner-box h5 span {
+    color: red;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.submit-part .inner-box span {
+    font-size: 14px;
+    color: #9e9e9e;
+    display: block;
+}
+
+.submit-part .inner-box input {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #343c418f;
+    border: 3px solid rgb(55, 62, 68);
+    color: rgb(146, 146, 146);
+    font-size: 16px;
+}
+
+.submit-part .inner-box .textarea {
+    border-radius: 5px;
+    background-color: #343c418f;
+    border: 3px solid rgb(55, 62, 68);
+    color: rgb(146, 146, 146);
+    margin-top: 10px;
+}
+
+
+/*mark-down start*/
+
+.TextEditorArea {
+    overflow: hidden;
+}
+
+.inner-scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #292e32;
+}
+
+.inner-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    background-color: #292e32;
+}
+
+.inner-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+
+/*.TextEditor-active{
+    display: block !important;
+}*/
+
+.TextEditorArea,
+.TextEditorArea-field {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.TextEditorArea-field {
+    width: 100%;
+    min-height: 150px;
+    padding: 16px;
+    background: transparent;
+    height: 500px;
+    border: 0;
+    display: block;
+    resize: none
+}
+
+.TextEditorArea-preview {
+    width: 100%;
+    min-height: 150px;
+    background: transparent;
+    height: 500px;
+    border: 0;
+    display: none;
+    overflow-y: scroll;
+    padding: 16px;
+    word-break: break-word;
+}
+
+.TextEditorArea-preview h2 {
+    font-size: 24px;
+}
+
+.TextEditorArea-preview ul {
+    margin-left: 20px;
+}
+
+.TextEditorArea-preview pre {
+    display: block;
+    font-size: 87.5%;
+    color: #ffffff;
+}
+
+.TextEditorArea-footer {
+    display: -ms-flexbox;
+    display: flex;
+    color: #9e9e9e;
+    background: #343c41;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.TextEditorArea-footer a {
+    cursor: pointer;
+}
+
+.TextEditorArea-footer-tab--active {
+    background: transparent;
+    border-top-color: transparent;
+}
+
+.TextEditorArea-footer-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #3e3e3e;
+    border-top: 1px solid #292e32;
+    border-right: 1px solid #292e32;
+    text-decoration: none;
+}
+
+.TextEditorArea-footer-message {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 8px 16px;
+    border-top: 1px solid #292e32;
+}
+
+
+/*mark-down end*/
+
+.submit-btn span {
+    color: #fff;
+}
+
+.modal-content {
+    background-color: #4b4d4e;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.modal-header {
+    border-bottom: 1px solid #5a5d5d;
+}
+
+.modal-header h5#exampleModalLabel {
+    color: #fff;
+    margin-left: 30px;
+}
+
+.modal-footer {
+    border-top: 1px solid #5a5d5d;
+}
+
+
+/*submit-part end*/
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Form Submit Page Design Part End :::::::::::::::::::::::::
+*********************************************************************************/
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Form Preview Page Design Part Start :::::::::::::::::::::::::
+*********************************************************************************/
+
+.submit-btn #exampleModal {
+    padding-right: 0px !important;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.report-summ.scrollbar {
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    max-height: 65vh;
+}
+
+.report-summ.scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #292e32;
+}
+
+.report-summ.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #292e32;
+}
+
+.report-summ.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+.report-summ {
+    word-break: break-word;
+    text-align: left;
+}
+
+.report-summ .inner-report-summ {
+    background: rgba(41, 46, 50, 0.5);
+    padding: 5px 0 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.report-summ .inner-report-summ ul {
+    padding: 15px 30px;
+    background: rgb(57, 63, 67);
+}
+
+.report-summ .inner-report-summ ul li {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.report-summ .inner-report-summ ul li span {
+    font-weight: 500;
+    color: #fff;
+    padding-left: 15px;
+}
+
+.report-summ .row.custom-bg {
+    border-radius: 0 !important;
+}
+
+.report-summ .custom-bg {
+    background: rgba(76, 75, 75, 0.2);
+}
+
+.report-summ .fixation {
+    padding: 15px 15px 0;
+    word-break: break-word;
+    width: 100%;
+}
+
+.report-summ .fixation h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.report-summ .fixation p {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.report-summ .token-code {
+    background: rgba(63, 69, 72, 0.3);
+    min-height: 300px;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.report-summ .prev-content {
+    border: 1px solid rgba(171, 166, 166, 0.1);
+    padding: 20px;
+    border-radius: 3px;
+    line-height: 1;
+}
+
+.report-summ .prev-content h2 {
+    font-size: 18px !important;
+    margin-bottom: 10px;
+}
+
+.report-summ .prev-content ol,
+.report-summ .prev-content ul {
+    margin-left: 35px;
+}
+
+.report-summ .token-code ul span {
+    font-size: 25px;
+}
+
+.report-summ li,
+.report-summ pre {
+    padding: 5px 0;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    overflow: hidden;
+}
+
+
+/*********************************************************************************
+::::::::::::::::::::::: Form Preview Page Design Part End :::::::::::::::::::::::::
+*********************************************************************************/
+
+
+/**********Responsive**************/
+
+@media (max-width: 575px) {
+    #index-page .table-title .col-sm-0 {
+        display: none;
+    }
+    #index-page .brand-logo {
+        margin-bottom: 10px;
+    }
+    #index-page .brand-name a,
+    #index-page .working-date p {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    .brand-part .row {
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 20px 0 !important;
+    }
+    .brand-part .row .brand-logo {
+        justify-content: center;
+        display: flex;
+    }
+    .userName-heading .input-group-text {
+        padding: .325rem 1rem;
+    }
+    .score-part .inner-box {
+        margin: 20px;
+    }
+    .score-part .inner-box .btn-group,
+    .score-part .inner-box .btn-group-vertical {
+        display: grid;
+        row-gap: 10px;
+    }
+    .choiceLabel {
+        display: block;
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+    .submit-part .inner-box .textarea .nav-tabs .nav-item.show .nav-link,
+    .submit-part .inner-box .textarea .nav-tabs .nav-link.active {
+        padding: 10px;
+        font-size: 10px;
+    }
+    .submit-part .inner-box .nav-tabs span {
+        font-size: 7px;
+    }
+    .btn-group-sm>.btn,
+    .btn-sm {
+        padding: .15rem .2rem;
+        font-size: .75rem;
+        line-height: 1;
+        border-radius: .2rem;
+    }
+    .TextEditorArea-preview {
+        /*height: 600px;*/
+    }
+    .TextEditorArea-footer-tab {
+        padding: 5px;
+        font-size: 12px;
+    }
+    .TextEditorArea-footer-message {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .report-summ .descrip p,
+    .report-summ .summary p,
+    .report-summ .accessToken p,
+    .report-summ .userToken p,
+    .report-summ .fixation p {
+        font-size: 14px;
+    }
+    .report-summ .summary ol li {
+        font-size: 18px;
+    }
+    .report-summ .token-code li {
+        font-size: 16px;
+    }
+    .report-summ .prev-content h2 {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #index-page .table-title h3 {
+        font-size: 18px;
+    }
+    #index-page .brand-name a,
+    #index-page .working-date p {
+        font-size: 15px;
+    }
+    .brand-part .row {
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 20px 0 !important;
+    }
+    .brand-part .row .brand-logo {
+        justify-content: center;
+        display: flex;
+    }
+    .score-part .inner-box {
+        margin: 20px;
+    }
+    #asset-page .sm-design {
+        display: block!important;
+        text-align: center;
+        justify-content: center!important;
+    }
+    #asset-page .brand-part .brand-logo .logo-shape {
+        margin-left: 0!important;
+    }
+    #asset-page .sm-design>a {
+        margin-right: 0 !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #asset-page .mid-cont .sngl-col {
+        display: block !important;
+        text-align: left;
+        padding-left: 10px;
+    }
+    #asset-page .mid-cont .sngl-col a {
+        margin-left: 0!important;
+    }
+    #asset-page .scope-cont h2 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    #asset-page .scope-cont p {
+        font-size: 15px;
+    }
+    .report-summ .inner-report-summ ul li {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .brand-part .brand-content {
+        margin-left: 60px;
+    }
+    .brand-part .brand-logo .logo-shape {
+        margin-left: 0!important;
+    }
+    .dwn-ref {
+        margin-right: 0 !important;
+    }
+    #asset-page .mid-cont .sngl-col p {
+        width: 50%;
+    }
+    .modal-dialog {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+    .brand-part .brand-content {
+        margin-left: 70px;
+    }
+    #asset-page .mid-cont .sngl-col p {
+        width: 60%;
+    }
+    .modal-dialog {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 1200px) {}
+
