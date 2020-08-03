@@ -90,7 +90,6 @@
                         <div class="col-md-4 text-center">
                             <div class="heading">
                                 <h2>Weakness</h2>
-
                             </div> <!-- heading end -->
                         </div>	<!-- col end -->
                         <div class="col-md-8 px-5">
