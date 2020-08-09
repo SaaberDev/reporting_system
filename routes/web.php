@@ -27,10 +27,11 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('au
         Route::get('/', 'AssetController@index')->name('index');
         Route::get('/add_asset', 'AssetController@create')->name('create');
         Route::post('/store_asset', 'AssetController@store')->name('store');
+        Route::get('/edit_asset/{id}', 'AssetController@edit')->name('edit');
+        Route::post('/update_asset/{id}', 'AssetController@update')->name('update');
 
         Route::get('/asset_details/{asset_slug}', 'AssetController@show')->name('show');
         Route::get('/asset_details/{asset_slug}/updateStatus', 'AssetController@updateStatus')->name('updateStatus');
-
 
         //Delete Route for Asset and Report
         Route::get('/delete_asset/{id}', 'AssetController@destroy_asset')->name('destroy_asset');
@@ -41,7 +42,11 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('au
         //PDF Routes
         Route::get('/asset_details/previewPDF/{asset_slug}', 'PDFController@previewPDF')->name('previewPDF');
         Route::get('/asset_details/download-PDF/{asset_slug}', 'PDFController@downloadPDF')->name('downloadPDF');
+        //Admin Password Change
+        Route::get('change-password', 'AuthController@change_password')->name('change.password');
+        Route::post('update-password', 'AuthController@update_password')->name('update.password');
     });
+
 
 /**
  * ************* USER ROUTE GROUP *************

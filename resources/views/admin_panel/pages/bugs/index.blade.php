@@ -202,12 +202,21 @@
                         'report_slug': reportSlug,
                     },
                     success: function (data) {
-                        //console.log(data.message)
-                        toastr.options.positionClass = 'toast-top-full-width';
-                        toastr.options.closeButton = true;
-                        toastr.options.closeMethod = 'fadeOut';
-                        toastr.options.closeDuration = 100;
-                        toastr.success(data.message);
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            onOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                        Toast.fire({
+                            icon: 'success',
+                            title: data.message,
+                        })
                     }
                 });
             });

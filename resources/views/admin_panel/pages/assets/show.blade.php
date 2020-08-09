@@ -126,13 +126,23 @@
                         'program_status': program_status,
                         'asset_slug': assetSlug,
                     },
+
                     success: function (data) {
-                        //console.log(data.message)
-                        toastr.options.positionClass = 'toast-top-full-width';
-                        toastr.options.closeButton = true;
-                        toastr.options.closeMethod = 'fadeOut';
-                        toastr.options.closeDuration = 100;
-                        toastr.success(data.message);
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            onOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                        Toast.fire({
+                            icon: 'success',
+                            title: data.message,
+                        })
                     }
                 });
             });
@@ -167,13 +177,16 @@
             event.preventDefault();
             const url_asset = $(this).attr('href');
 
-            swal({
+            Swal.fire({
                 title: 'Are you sure?',
-                text: 'This record and it`s details will be permanently deleted!',
+                text: "This record and it's details will be permanently deleted!",
                 icon: 'warning',
-                buttons: ["Cancel", "Yes Delete"],
-            }).then(function (value) {
-                if(value){
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
                     window.location.href = url_asset;
                 }
             })
@@ -184,13 +197,16 @@
             event.preventDefault();
             const url_report = $(this).attr('href');
 
-            swal({
-                title: 'Are you sure, you want to delete?',
-                text: 'This record will be permanently Deleted',
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'This record will be deleted permanently!',
                 icon: 'warning',
-                buttons: ["Cancel", "Yes Delete"],
-            }).then(function (value) {
-                if(value){
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
                     window.location.href = url_report;
                 }
             })

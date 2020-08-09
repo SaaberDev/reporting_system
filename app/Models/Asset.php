@@ -54,7 +54,7 @@ class Asset extends Model
     use Sluggable;
 
     //protected $fillable = ['companyName', 'asset_slug'];
-    //protected $guarded = [];
+    protected $guarded = [];
 
 
     /**
@@ -92,7 +92,7 @@ class Asset extends Model
      * @return HasOne
      */
     public function AppUrls(){
-        return $this->hasOne(AppUrl::class);
+        return $this->hasOne(AppUrl::class, 'asset_id');
     }
 
 

@@ -5,10 +5,10 @@
 <script src="{{ asset('admin_panel/plugins/inputTag/dist/jQuery.tagify.min.js') }}"></script>
 <!-- Datepicker JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
 <!-- DataTables -->
 <script src="{{ asset('admin_panel/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('admin_panel/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 <!-- SweetAlert -->
-<script src="{{ asset('vendor/sweetalert/sweetalert.js') }}"></script>
+{{--<script src="{{ asset('vendor/sweetalert/sweetalert.js') }}"></script>--}}
+<script src="{{ asset('vendor/sweetalert/sweetalert2.js') }}"></script>
 <script src="{{ asset('admin_panel/js/scripts.js') }}"></script>

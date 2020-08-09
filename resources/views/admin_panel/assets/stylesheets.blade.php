@@ -6,7 +6,7 @@
 <!-- Tagify CSS -->
 <link rel="stylesheet" href="{{ asset('admin_panel/plugins/inputTag/dist/tagify.css') }}">
 <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/8a84b21c23.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ asset('vendor/font-awesome5/css/all.min.css') }}">
 <!-- Switch Toggle -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css">

@@ -51,57 +51,29 @@ class AssetController extends Controller
      * @param OptionalUrl $optionalUrls
      * @return RedirectResponse
      */
-    public function store(AssetFormValidation $request, Asset $assets, AppUrl $AppUrls, OptionalUrl $optionalUrls)
+    public function store(AssetFormValidation $request)
     {
-        $assets->program_status = 1;
-        $assets->company_name = ucfirst($request->input('companyName'));
+        $assets = Asset::Create([
+            'company_name' => ucfirst($request->input('companyName')),
+            'company_logo' => imageUpload_handler($request),
+            'asset_slug' => SlugService::createSlug(Asset::class, 'asset_slug', $request->input('companyName')),
+            'start_date' => $request->input('startDate'),
+            'end_date' => $request->input('endDate'),
+            'url' => $request->input('url'),
+            'program_status' => 1
+        ]);
+        AppUrl::Create([
+            'asset_id' => $assets->id,
+            'ios' => $request->input('ios'),
+            'android' => $request->input('android'),
+        ]);
+        OptionalUrl::Create([
+            'asset_id' => $assets->id,
+            'inScope_Url' => $request->input('inScopeUrl'),
+            'outScope_Url' => $request->input('outScopeUrl'),
+        ]);
 
-        // Company Logo Upload
-        if ($request->hasFile('companyLogo')){
-            //Get original file from input request
-            $file = $request->file('companyLogo');
-            //Get file name with extension
-            $fileWithExt = $file->getClientOriginalName();
-            //Get file name only
-            $filename = pathinfo($fileWithExt, PATHINFO_FILENAME);
-            //Get Extension only
-            $ext = $request->file('companyLogo')->getClientOriginalExtension();
-            //Filename to store
-            $fileNameToStore = strtoupper($filename . '-' . md5(time())) . '.' . $ext;
-            $location = 'public/admin_panel/img/';
-            //Save file
-            $file->storeAs($location, $fileNameToStore);
-        } else {
-            //Default Image
-            $companyName = $assets->company_name;
-            $getCompanyFirstLetter = substr($companyName, 0, 1);
-            $ext = 'png';
-            $fileNameToStore = strtoupper($companyName . '-' . md5(time())) . '.' . $ext;
-            $img = GenerateAlphaAvatar($getCompanyFirstLetter);
-
-            $img->save(storage_path() . '/app/public/admin_panel/img/' . $fileNameToStore, '90');
-        }
-        $assets->company_logo = $fileNameToStore;
-
-        // Slug
-        $assets->asset_slug = SlugService::createSlug(Asset::class, 'asset_slug', $request->input('companyName'));
-
-        $assets->url = $request->input('url');
-        $assets->start_date = $request->input('startDate');
-        $assets->end_date = $request->input('endDate');
-        $assets->save();
-
-        $AppUrls->ios = $request->input('ios');
-        $AppUrls->android = $request->input('android');
-        $AppUrls->asset_id = $assets->id;
-        $AppUrls->save();
-
-        $optionalUrls->inScope_Url = $request->input('inScopeUrl');
-        $optionalUrls->outScope_Url = $request->input('inScopeUrl');
-        $optionalUrls->asset_id = $assets->id;
-        $optionalUrls->save();
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Asset added successfully');
     }
 
     /**
@@ -128,7 +100,7 @@ class AssetController extends Controller
         $assets->program_status = $request->program_status;
 
         $assets->update();
-        return response()->json(['message' => 'Program status updated successfully.']);
+        return response()->json(['message' => 'Program status updated successfully!']);
     }
 
     /**
@@ -149,33 +121,61 @@ class AssetController extends Controller
      */
     public function updateValidStatus(Request $request, $report_slug){
         $reports = Info::slug($report_slug)->first();
-        $reports->triage_status = $request->triage_status;
+        $reports->triage_status = $request->__get('triage_status');
 
         $reports->update();
-        return \response()->json(['message' => 'Report status updated successfully.']);
+        return \response()->json(['message' => 'Report status updated successfully!']);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View
      */
     public function edit($id)
     {
-        //
+        $assets = Asset::with(['OptionalUrls', 'AppUrls'])->findOrFail($id);
+        $OptionalUrls = [
+            'inScope' => $assets['OptionalUrls']->inScope_Url,
+            'outScope' => $assets['OptionalUrls']->outScope_Url,
+        ];
+        $AppUrls = [
+            'ios' => $assets['AppUrls']->ios,
+            'android' => $assets['AppUrls']->android,
+        ];
+
+        return \view('admin_panel.pages.assets.edit', compact('assets', 'OptionalUrls', 'AppUrls'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
+     * @param AssetFormValidation $request
+     * @param int $id
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(AssetFormValidation $request, $id)
     {
-        //
+        $assets = Asset::with('AppUrls', 'OptionalUrls')->findOrFail($id);
+        $assets->update([
+            'company_name' => ucfirst($request->input('companyName')),
+            'company_logo' => imageUpdate_handler($assets, $request),
+            'asset_slug' => SlugService::createSlug(Asset::class, 'asset_slug', $request->input('companyName')),
+            'start_date' => $request->input('startDate'),
+            'end_date' => $request->input('endDate'),
+            'url' => $request->input('url'),
+        ]);
+        $assets['AppUrls']->update([
+            'ios' => $request->input('ios'),
+            'android' => $request->input('android'),
+        ]);
+        $assets['OptionalUrls']->update([
+            'inScope_Url' => $request->input('inScopeUrl'),
+            'outScope_Url' => $request->input('outScopeUrl'),
+        ]);
+
+        return redirect()->route('admin.index', compact('assets'));
     }
 
     /**
@@ -187,7 +187,7 @@ class AssetController extends Controller
      */
     public function destroy_asset($id)
     {
-        $assets = Asset::find($id);
+        $assets = Asset::findOrFail($id);
         $assets->delete();
         if (\File::exists(storage_path() . '/app/public/admin_panel/img/' . $assets->company_logo)){
             \File::delete(storage_path() . '/app/public/admin_panel/img/' . $assets->company_logo);
@@ -205,6 +205,6 @@ class AssetController extends Controller
         $reports = Info::find($id);
         $reports->delete();
 
-        return redirect()->back()->with('success', 'Report deleted successfully');
+        return redirect()->back()->with('success_toast', 'Report deleted successfully');
     }
 }

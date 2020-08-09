@@ -35,9 +35,11 @@ class ReportController extends Controller
      */
     public function show($asset_slug)
     {
-        $assets = Asset::slug($asset_slug)->first();
+        $assets = Asset::slug($asset_slug)->with('OptionalUrls')->first();
+        $inScopeUrls = json_decode($assets->OptionalUrls->inScope_Url);
+        $outScopeUrls = json_decode($assets->OptionalUrls->outScope_Url);
         $app_urls = $assets->AppUrls()->where('asset_id', $assets->id)->first();
-        return view('user_panel.pages.reporting_area.show', compact('assets', 'app_urls'));
+        return view('user_panel.pages.reporting_area.show', compact('assets', 'app_urls', 'inScopeUrls', 'outScopeUrls'));
     }
 
     /**

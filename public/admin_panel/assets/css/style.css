@@ -29,9 +29,16 @@ button:focus {
 }
 
 .navbar-dark .navbar-nav .logoutBtn .nav-link {
-    color: rgba(245, 145, 145, 0.5);
-    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
     font-size: 20px;
+    transition: all 0.6s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .logoutBtn .nav-link:hover {
+    color: rgb(255, 82, 82);
+    font-size: 20px;
+    text-shadow: 0 0 6px #FF0000;
+    transition: all 0.6s ease-in-out;
 }
 
 .navLinks {
@@ -422,6 +429,7 @@ tags.tagify.form-control {
     color: #fff;
     background: #242d35;
     border: 1px solid #4e5050;
+    overflow: hidden;
 }
 
 .page-item.disabled .page-link {
@@ -678,4 +686,94 @@ pre {
 
 .welcome-user{
     margin-top: 9px;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545!important;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e")!important;
+    background-repeat: no-repeat!important;
+    background-position: right calc(.375em + .1875rem) center!important;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem)!important;
+}
+
+
+/*Upload*/
+.it .btn-orange
+{
+    background-color: blue;
+    border-color: #777!important;
+    color: #777;
+    text-align: left;
+    width:100%;
+}
+.it input.form-control
+{
+
+    border:none;
+    margin-bottom:0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+.it .form-control:focus
+{
+    border-color: #ff4d0d;
+    box-shadow: none;
+    outline: none;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -147px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0056B3;
+}
+
+.password-reset-box{
+    margin-right: 60px;
+    margin-left: 60px;
+}
+.account-info{
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 2px;
 }

@@ -39,7 +39,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-sm-12 col-md-3 text-center">
-                            <h3>In Scope</h3>
+                            <h3>App URL</h3>
                         </div>   <!-- col end -->
 
                         <div class="col-sm-12 col-md-9">
@@ -48,24 +48,51 @@
                                     <h5>ISO:</h5>
                                     <p>{{ $app_urls->ios }}</p>
                                     <div class="dwn-ref mx-auto">
-                                        <a href="{{ $app_urls->ios }}" target="_blank">Download Here <i class="fas fa-download"></i></a>
+                                        @if(!empty($app_urls->ios))
+                                            <a href="{{ $app_urls->ios }}" target="_blank">Download Here <i class="fas fa-download"></i></a>
+                                        @else
+                                            App link not available
+                                        @endif
                                     </div>  <!-- dwn-ref end -->
                                 </div>
                                 <div class="sngl-col d-flex">
                                     <h5>Android:</h5>
                                     <p>{{ $app_urls->android }}</p>
                                     <div class="dwn-ref mx-auto">
-                                        <a href="{{ $app_urls->android }}" target="_blank">Download Here <i class="fas fa-download"></i></a>
+                                        @if(!empty($app_urls->android))
+                                            <a href="{{ $app_urls->android }}" target="_blank">Download Here <i class="fas fa-download"></i></a>
+                                        @else
+                                            App link not available
+                                        @endif
                                     </div>  <!-- dwn-ref end -->
                                 </div>  <!-- sngl-col end -->
                             </div>  <!-- mid-cont end -->
                         </div>   <!-- col end -->
 
-
                     </div>  <!-- row end -->
                 </div>  <!-- container end -->
             </div>  <!-- file-download-part end -->
 
+            <div class="outof-scope custom-bg py-5 mb-3">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center">
+                            <h3>In Scope</h3>
+                        </div>  <!-- col end -->
+                        <div class="col-md-9">
+                            <div class="scope-cont">
+                                <ul class="pl-5">
+                                    @forelse($inScopeUrls as $inScopeUrl)
+                                        <li>{{ change_http($inScopeUrl->value) }}</li>
+                                    @empty
+                                        Not Available
+                                    @endforelse
+                                </ul>
+                            </div>  <!-- scope-cont end -->
+                        </div>  <!-- col end -->
+                    </div>  <!-- row end -->
+                </div>  <!-- container end -->
+            </div>  <!-- In Scope End -->
 
             <div class="outof-scope custom-bg py-5 mb-3">
                 <div class="container">
@@ -75,22 +102,18 @@
                         </div>  <!-- col end -->
                         <div class="col-md-9">
                             <div class="scope-cont">
-                                <h2>Out of Scope Vulnerabilities</h2>
-                                <p>All other DigitalOcean domains or properties not listed are out of scope, including subdomains. All domains or properties hosted on DigitalOcean and controlled by third parties are out of scope</p>
                                 <ul class="pl-5">
-                                    <li>Support tickets (due to the load on our support teams--please DO NOT perform any testing on, or create any, support tickets. Thanks!)</li>
-                                    <li>Rate limit bypasses, with the exception of those that have a direct security impact</li>
-                                    <li>Missing SPF/DMARC/DKIM settings on non-email DigitalOcean domains.</li>
-                                    <li>Publicly known processor side-channel attacks</li>
-                                    <li>Any physical attempts against DigitalOcean property or data centers</li>
-                                    <li>Social engineering / phishing</li>
-                                    <li>Previously known vulnerable 3rd party software (such as old Apache server) without a working POC</li>
+                                    @forelse($outScopeUrls as $outScopeUrl)
+                                        <li>{{ $outScopeUrl->value }}</li>
+                                    @empty
+                                        Not Available
+                                    @endforelse
                                 </ul>
                             </div>  <!-- scope-cont end -->
                         </div>  <!-- col end -->
                     </div>  <!-- row end -->
                 </div>  <!-- container end -->
-            </div>  <!-- outof-scope end -->
+            </div>  <!-- Out Scope End -->
         </div>  <!-- container end -->
     </section>  <!-- section end -->
 @stop

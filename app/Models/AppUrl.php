@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Models\AppUrl
@@ -27,6 +28,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class AppUrl extends Model
 {
+    /**
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
+     * @return BelongsTo
+     */
     public function assets(){
         return $this->belongsTo(Asset::class);
     }

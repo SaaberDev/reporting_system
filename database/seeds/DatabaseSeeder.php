@@ -1,7 +1,5 @@
 <?php
 
-    use App\Models\AppUrl;
-    use App\Models\OptionalUrl;
     use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

@@ -16,9 +16,11 @@
     <!--====================favicon=======================-->
     <link rel="icon" type="image/png" href="{{ asset('admin_panel/assets/img/logo/favicon.png') }}"/>
     <link rel="stylesheet" href="{{ asset('admin_panel/assets/css/login-form.css') }}">
+    <script src="{{ asset('vendor/sweetalert/sweetalert2.js') }}"></script>
 
 </head>
 <body>
     @yield('content')
+    @include('alert_message.alert')
 </body>
 </html>

@@ -55,8 +55,8 @@
                             <td>Description</td>
                             <td class="eyeBtn">
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <button type="submit" onclick="location.href='{{ route('admin.show', $asset->asset_slug) }}'"><i class="fas fa-eye text-success"></i></button>
-                                    <button type="submit"><i class="fas fa-edit text-primary"></i></button>
+                                    <button type="submit" onclick="location.href='{{ route('admin.show', $asset->asset_slug) }}'"><i class="fa fa-eye text-success"></i></button>
+                                    <button type="submit" onclick="location.href='{{ route('admin.edit', $asset->id) }}'"><i class="fa fa-edit text-primary"></i></button>
                                 </div>
                             </td>
                         </tr>

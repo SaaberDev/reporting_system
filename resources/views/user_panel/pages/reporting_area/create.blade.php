@@ -62,14 +62,12 @@
                                 <input class="form-control " type="text" placeholder="Search" id="assetSearchInput">
                                 <div class="inner-box">
                                     <div class="list-group scrollbar" id="assetList">
-                                        @forelse($inScopeUrls ?: [] as $key => $OptionalUrl)
+                                        @foreach($inScopeUrls as $key => $OptionalUrl)
                                             <input type="radio" name="RadioAsset"
                                                    {{ old('RadioAsset') == change_http($OptionalUrl->value) ? 'checked='.'"'.'checked'.'"' : '' }}
                                                    value="{{ change_http($OptionalUrl->value) }}" id="RadioAsset{{ $key + 1 }}" />
                                             <label class="list-group-item" for="RadioAsset{{ $key + 1 }}">{{ change_http($OptionalUrl->value) }}</label>
-                                        @empty
-                                            <label class="list-group-item">No Data</label>
-                                        @endforelse
+                                        @endforeach
                                     </div>	<!-- list-group & scrollbar end -->
 
 
