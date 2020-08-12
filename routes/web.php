@@ -22,7 +22,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 /**
  * ************* ADMIN ROUTE GROUP *************
  */
-Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('auth')
+Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('role:isAdmin')
     ->group(function (){
         Route::get('/', 'AssetController@index')->name('index');
         Route::get('/add_asset', 'AssetController@create')->name('create');
@@ -51,7 +51,7 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('au
 /**
  * ************* USER ROUTE GROUP *************
  */
-Route::prefix('report')->name('report.')->namespace('user_panel')
+Route::prefix('report')->name('report.')->namespace('user_panel')->middleware('role:isUser')
     ->group(function (){
         Route::get('/', 'ReportController@index')->name('index');
         Route::get('/report_details/{asset_slug}', 'ReportController@show')->name('show');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use App\Models\User;
 use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -30,19 +30,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
     protected $maxAttempts = 3; // Default is 5
     protected $decayMinutes = 5; // Default is 1
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @param $request
+     * @param User $user
+     * @return RedirectResponse|void
      */
-    /*public function __construct()
+    public function authenticated($request, User $user)
     {
-        $this->middleware('guest')->except('logout');
-    }*/
+        if ($user->hasRole('isAdmin')){
+            return redirect()->route('admin.index');
+        }
+        elseif ($user->hasRole('isUser')){
+            return redirect()->route('report.index');
+        }
+        else{
+            abort(401);
+        }
+    }
 
     /**
      * @return Application|RedirectResponse|Redirector

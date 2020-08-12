@@ -86,10 +86,35 @@ class UserSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
-
         ];
         foreach ($admins as $admin){
-            User::create($admin);
+            $user = User::create($admin);
+            $role = new \App\Models\Role(['id' => 1]);
+            $user->roles()->sync($role);
+        }
+
+        $users = [
+            [
+                'id' => 10,
+                'name' => 'Demo User 1',
+                'email' => 'demo_1@demo.com',
+                'password' => bcrypt('demo_1@demo.com'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'id' => 11,
+                'name' => 'Demo User 2',
+                'email' => 'demo_2@demo.com',
+                'password' => bcrypt('demo_2@demo.com'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+        ];
+        foreach ($users as $user){
+            $new_user = User::create($user);
+            $role = new \App\Models\Role(['id' => 2]);
+            $new_user->roles()->sync($role);
         }
     }
 }

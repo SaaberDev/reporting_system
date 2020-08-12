@@ -342,21 +342,25 @@
                                 <tbody>
                                 <tr>
                                     <th>Client</th>
-                                    <td>Judgeme</td>
+                                    <td>{{ $assets->company_name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Targets</th>
                                     <td>
-                                        <p>Judge.me</p>
-                                        <p>feedback.Judge.me</p>
-                                        <p>help.Judge.me</p>
-                                        <p>cdn.Judge.me</p>
-                                        <p>cdn.Judge.me</p>
+                                        @foreach($inScopeUrls as $inScopeUrl)
+                                        <p>{{ change_http($inScopeUrl->value) }}</p>
+                                        @endforeach
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Pentesters</th>
-                                    <td>Ahsan Khan, Anees Khan, Shawar Khan, Yeasir Arafat</td>
+                                    <td>
+                                        @foreach($users as $user)
+                                            {{ $loop->first ? '' : ',' }}
+                                            {{ $user->name }}
+                                            {{ $loop->last ? '.' : '' }}
+                                        @endforeach
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
