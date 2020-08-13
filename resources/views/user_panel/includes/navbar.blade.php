@@ -11,6 +11,14 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('report.index') }}">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('logout') }}" class="nav-link"
+                           onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf @method('POST')
+                        </form>
+                    </li>
                 </ul>
             </div>    <!-- navbar-collaps end -->
         </nav>  <!-- nav end -->

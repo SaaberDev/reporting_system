@@ -24,6 +24,11 @@ class AuthController extends Controller
 
     public function update_password(AdminPasswordValidation $request)
     {
+        $notification = [
+            'message' => 'Password Updated Successfully!',
+            'alert-type' => 'success_toast',
+        ];
+
         $old_pass = \Auth::user()->password;
         $current_pass = $request->__get('current_pass');
         $new_pass = $request->__get('password');
@@ -33,7 +38,7 @@ class AuthController extends Controller
             $users->password = Hash::make($new_pass);
             $users->save();
             \Auth::logout();
-            return redirect()->route('login')->with('success_toast', 'Password Changed Successfully');
+            return redirect()->route('login')->with($notification);
         } else {
             return redirect()->back()->with('message_error', 'Password do not match our records');
         }

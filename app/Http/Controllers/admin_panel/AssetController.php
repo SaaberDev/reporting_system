@@ -53,6 +53,10 @@ class AssetController extends Controller
      */
     public function store(AssetFormValidation $request)
     {
+        $notification = [
+            'message' => 'You need to login with your credentials!',
+            'alert-type' => 'success',
+        ];
         $assets = Asset::Create([
             'company_name' => ucfirst($request->input('companyName')),
             'company_logo' => imageUpload_handler($request),
@@ -73,7 +77,7 @@ class AssetController extends Controller
             'outScope_Url' => $request->input('outScopeUrl'),
         ]);
 
-        return redirect()->back()->with('success', 'Asset added successfully');
+        return redirect()->back()->with($notification);
     }
 
     /**

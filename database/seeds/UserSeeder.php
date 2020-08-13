@@ -89,7 +89,10 @@ class UserSeeder extends Seeder
         ];
         foreach ($admins as $admin){
             $user = User::create($admin);
-            $role = new \App\Models\Role(['id' => 1]);
+            $role = [
+                1 => ['role_id' => 1],
+                2 => ['role_id' => 2]
+            ];
             $user->roles()->sync($role);
         }
 

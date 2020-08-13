@@ -18,8 +18,12 @@ class CheckRole
      */
     public function handle($request, Closure $next, ...$roles)
     {
-        $user = Auth::user();
+        $notification = [
+            'message' => 'You need Administrative Permission.',
+            'alert-type' => 'warning',
+        ];
 
+        $user = Auth::user();
         foreach ($roles as $role){
             if(is_null($user)){
                 return redirect()->route('login');
@@ -27,10 +31,7 @@ class CheckRole
             elseif ($user->hasRole($role)){
                 return $next($request);
             }
-            else{
-                abort(401);
-            }
         }
-        return $next($request);
+        return redirect()->route('login')->with($notification);
     }
 }
