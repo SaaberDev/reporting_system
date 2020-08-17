@@ -29,14 +29,13 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('ro
         Route::post('/store_asset', 'AssetController@store')->name('store');
         Route::get('/edit_asset/{id}', 'AssetController@edit')->name('edit');
         Route::post('/update_asset/{id}', 'AssetController@update')->name('update');
-
+        //Asset Details Routes
         Route::get('/asset_details/{asset_slug}', 'AssetController@show')->name('show');
         Route::get('/asset_details/{asset_slug}/updateStatus', 'AssetController@updateStatus')->name('updateStatus');
-
         //Delete Route for Asset and Report
         Route::get('/delete_asset/{id}', 'AssetController@destroy_asset')->name('destroy_asset');
         Route::get('/delete_report/{id}', 'AssetController@destroy_report')->name('destroy_report');
-        //Info Detail Route
+        //Report Detail Route
         Route::get('/report_details/show_details/{report_slug}', 'AssetController@showReport')->name('showReport');
         Route::get('/report_details/show_details/{report_slug}/updateValidStatus', 'AssetController@updateValidStatus')->name('updateValidStatus');
         //PDF Routes

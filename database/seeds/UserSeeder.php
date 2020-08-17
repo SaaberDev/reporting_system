@@ -99,17 +99,17 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'id' => 10,
-                'name' => 'Demo User 1',
-                'email' => 'demo_1@demo.com',
-                'password' => bcrypt('demo_1@demo.com'),
+                'name' => 'User 1',
+                'email' => 'user_1@pentesterspace.com',
+                'password' => bcrypt('$%pentesterspace%$'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'id' => 11,
-                'name' => 'Demo User 2',
-                'email' => 'demo_2@demo.com',
-                'password' => bcrypt('demo_2@demo.com'),
+                'name' => 'User 2',
+                'email' => 'user_2@pentesterspace.com',
+                'password' => bcrypt('$%pentesterspace%$'),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
