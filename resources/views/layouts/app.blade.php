@@ -9,6 +9,7 @@
 
     <title>{{ config('app.name') }}</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
@@ -22,5 +23,6 @@
 <body>
     @yield('content')
     @include('alert_message.alert')
+    @stack('scripts')
 </body>
 </html>

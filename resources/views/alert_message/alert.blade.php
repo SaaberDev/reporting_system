@@ -4,10 +4,9 @@
     switch(type){
         case 'success':
             Swal.fire({
-                title:'Successfully Added!',
+                title:'Success!',
                 text:"{{ Session::get('message') }}",
                 icon: "success",
-                timer:3000,
             })
             break
         case 'warning':

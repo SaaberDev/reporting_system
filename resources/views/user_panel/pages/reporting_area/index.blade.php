@@ -30,7 +30,7 @@
                 </div>  <!-- row end -->
             </div>  <!-- table-title end -->
 
-            @foreach($assets as $asset)
+            @forelse($assets as $asset)
             <div class="table-single-row clickable">
                 <div class="row text-center d-flex align-items-center">
                     <div class="col-sm-3 col-md-3">
@@ -59,7 +59,15 @@
 
                 </div>  <!-- row end -->
             </div>  <!-- table-single-row end-->
-            @endforeach
+            @empty
+                <div class="table-single-row clickable">
+                    <div class="row text-center d-flex align-items-center">
+                        <div class="col-sm-6 col-md-6">
+                                No Programs are running right now. Please come back later.
+                        </div>  <!-- col end -->
+                    </div>  <!-- row end -->
+                </div>
+            @endforelse
 
         </div>  <!-- container end -->
     </section>

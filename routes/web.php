@@ -13,12 +13,25 @@
 /**
  * ************* Auth Routes *************
  */
-Auth::routes([
+
+    use App\Models\User;
+
+    Auth::routes([
     'register' => false,
-    'reset' => false,
+    'reset' => true,
 ]);
+//Route::post('login', 'Auth\LoginController@login')->middleware('guest');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+    Route::any('/', function(User $user) {
+        if ($user->hasRole('isAdmin')){
+            return redirect()->route('admin.index');
+        }
+        elseif ($user->hasRole('isUser')){
+            return redirect()->route('report.index');
+        }
+        return redirect('/login');
+    });
 /**
  * ************* ADMIN ROUTE GROUP *************
  */
@@ -44,7 +57,13 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('ro
         //Admin Password Change
         Route::get('change-password', 'AuthController@change_password')->name('change.password');
         Route::post('update-password', 'AuthController@update_password')->name('update.password');
+
+        Route::get('/invite', 'InviteController@invite')->name('invite');
+        Route::post('/invite', 'InviteController@process')->name('process');
     });
+
+    // {token} is a required parameter that will be exposed to us in the controller method
+    Route::get('/accept/{token}', 'admin_panel\InviteController@accept')->name('accept');
 
 
 /**

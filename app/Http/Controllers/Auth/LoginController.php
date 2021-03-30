@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 
 class LoginController extends Controller
@@ -34,6 +35,7 @@ class LoginController extends Controller
     protected $maxAttempts = 3; // Default is 5
     protected $decayMinutes = 5; // Default is 1
 
+
     /**
      * @param $request
      * @param User $user
@@ -47,7 +49,7 @@ class LoginController extends Controller
         elseif ($user->hasRole('isUser')){
             return redirect()->route('report.index');
         }
-        else{
+        else {
             abort(401);
         }
     }

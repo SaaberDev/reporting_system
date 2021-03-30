@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-12 col-md-6 text-right">
                 <div class="assetBtn">
-                    <a class="btn btn-ctm">Create SOW</a>
+                    <a class="btn btn-ctm" href="{{ route('admin.invite') }}">Invite User</a>
                     <a class="btn btn-ctm" href="{{ route('admin.create') }}">Create New Asset</a>
                 </div>
             </div>

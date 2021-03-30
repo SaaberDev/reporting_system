@@ -1,7 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="login-form">
+        <div class="login-form-wrapper">
+            <div class="login-form-wrap">
+                <form action="{{ route('password.update') }}" method="POST" class="form">
+                    @csrf @method('POST')
+                    <input type="hidden" name="token" value="{{ $token }}">
+                    <span class="form-title" style="margin-bottom: 1rem;">
+                        Reset Password
+                    </span>
+
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <div class="form-input">
+                        <label></label>
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" name="email" placeholder="Email" autocomplete="email" autofocus>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-input">
+                        <label></label>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" autocomplete="new-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-input">
+                        <label></label>
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" autocomplete="new-password">
+                    </div>
+
+                    <button type="submit" class="form-btn">
+                        Reset Password
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -61,5 +113,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection
