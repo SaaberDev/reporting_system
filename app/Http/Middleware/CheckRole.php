@@ -20,22 +20,19 @@ class CheckRole
     public function handle($request, Closure $next, ...$roles)
     {
         $notification = [
-            'message' => 'You need Administrative Permission.',
-            'alert-type' => 'success',
+            'message' => 'You need permission to access this panel.',
+            'alert-type' => 'warning',
         ];
 
         $user = Auth::user();
         foreach ($roles as $role){
             if(is_null($user)){
-                return redirect()->route('login');
-            }
-            elseif (!$user->hasRole($role)){
                 return redirect()->route('login')->with($notification);
             }
             elseif ($user->hasRole($role)){
                 return $next($request);
             }
         }
-        return redirect()->route('login')->with($notification);
+        return $next($request);
     }
 }

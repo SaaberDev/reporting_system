@@ -69,7 +69,7 @@ Route::prefix('admin')->name('admin.')->namespace('admin_panel')->middleware('ro
 /**
  * ************* USER ROUTE GROUP *************
  */
-Route::prefix('report')->name('report.')->namespace('user_panel')->middleware('role:isUser')
+Route::prefix('report')->name('report.')->namespace('user_panel')->middleware(['role:isAdmin', 'role:isUser'])
     ->group(function (){
         Route::get('/', 'ReportController@index')->name('index');
         Route::get('/report_details/{asset_slug}', 'ReportController@show')->name('show');
