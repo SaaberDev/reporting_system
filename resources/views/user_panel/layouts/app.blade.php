@@ -13,5 +13,6 @@
 <!-- Js Link -->
     @include('user_panel.assets.scripts')
     @stack('scripts')
+@include('alert_message.alert')
 </body>
 </html>

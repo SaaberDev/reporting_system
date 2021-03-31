@@ -89,4 +89,21 @@ class User extends Authenticatable
     {
         return null !== $this->roles()->where('name', $role)->first();
     }
+
+    /*
+     * Check if User has any Role
+     * */
+    public function hasAnyRole($roles){
+        return null !== $this->roles()->whereIn('name', $roles)->first();
+    }
+
+    /*
+     * Authorization Check
+     * */
+    public function authorizeRoles($roles){
+        if(is_array($roles)){
+            return $this->hasAnyRole($roles) || abort(401, 'Access Denied | Authorization Required');
+        }
+        return $this->hasRole($roles) || abort(401, 'Access Denied | Authorization Required');
+    }
 }

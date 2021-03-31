@@ -29,6 +29,9 @@ class CheckRole
             if(is_null($user)){
                 return redirect()->route('login')->with($notification);
             }
+            elseif ($user->hasRole($role) != 'isAdmin'){
+                return redirect()->back()->with($notification);
+            }
             elseif ($user->hasRole($role)){
                 return $next($request);
             }

@@ -11,3 +11,4 @@
 <script type="text/javascript" src="{{ asset('user_panel/js/custom.js') }}"></script>
 <!-- Preview PopUp JS -->
 <script type="text/javascript" src="{{ asset('user_panel/js/reportPreview.js') }}"></script>
+<script src="{{ asset('vendor/sweetalert/sweetalert2.js') }}"></script>

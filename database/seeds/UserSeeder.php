@@ -27,14 +27,14 @@ class UserSeeder extends Seeder
             $user = User::create($admin);
             $role = [
                 1 => ['role_id' => 1],
-//                2 => ['role_id' => 2]
+                2 => ['role_id' => 2]
             ];
             $user->roles()->sync($role);
         }
 
         $users = [
             [
-                'id' => 10,
+                'id' => 2,
                 'name' => 'User',
                 'email' => 'user@demo.com',
                 'password' => bcrypt('1234'),
