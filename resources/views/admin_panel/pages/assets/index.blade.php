@@ -3,6 +3,16 @@
 
 @push('styles')
     {{-- Internal CSS will go here --}}
+    <style>
+        .table td, .table th {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #343c41;
+            position: relative;
+            text-align: center;
+            border-top: none;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -42,7 +52,7 @@
                             @forelse($assets as $asset)
                                 <tr>
                             <th scope="row">{{ $asset->id }}</th>
-                            <td style="display: flex;align-items: center;justify-content: space-around;">
+                            <td style="display: flex;align-items: center;justify-content: center;position: relative;left:30%;">
                                 @if($asset->program_status === 1)
                                     <span class="circleGreen mr-2"></span>Running
                                 @elseif($asset->program_status === 0)

@@ -78,7 +78,7 @@ class Info extends Model
      *
      * @return array
      */
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'report_slug' => [

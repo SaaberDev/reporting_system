@@ -56,13 +56,17 @@ class Asset extends Model
     //protected $fillable = ['companyName', 'asset_slug'];
     protected $guarded = [];
 
+    protected $casts = [
+        'program_status' => 'int'
+    ];
+
 
     /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
      */
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'asset_slug' => [
