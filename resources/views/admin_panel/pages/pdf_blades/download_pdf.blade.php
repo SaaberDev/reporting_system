@@ -304,7 +304,7 @@
         <div class="row">
             <section class="brandPage page-break">
                 <div class="brand-align">
-                    <img src="{{ storage_path('White.png') }}" alt="pentester-logo">
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(storage_path("White.png"))) }}" alt="pentester-logo">
                 </div>
                 <div>
                     <p class="brandTitle">Penetration Test Report</p>
