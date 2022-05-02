@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin_panel;
 use App\Http\Controllers\Controller;
 use App\Models\Asset;
 use App\Models\User;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PDFController extends Controller
 {
