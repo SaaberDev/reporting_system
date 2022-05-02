@@ -34,3 +34,4 @@ jobs:
             git stash --include-untracked
             git pull ${{ secrets.SAABERDEV_GITPULL }} master
             git status
+            php artisan storage:link
